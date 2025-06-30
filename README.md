@@ -46,7 +46,7 @@ We provide the model training weights for two datasets，UIEB and LSUI, which ca
 ## Testing
 
 1. Download and unzip the code.
-2. Place your testing images in the `test_images` folder.
+2. Place your testing images in the `input_dir` folder.
 3. Run `python outpicture.py --initmodel your_model_wright.pt -x input_dir -o output_dir `.
 
 
