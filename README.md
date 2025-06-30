@@ -11,8 +11,8 @@ To set up the environment and install the required packages, follow these steps:
 
 1. Create a virtual environment:
    ```sh
-   conda create -n cevae python=3.9
-   conda activate cevae
+   conda create -n pyuie python=3.9
+   conda activate pyuie
    ```
 
 2. Install PyTorch (v.2.3) and other relevant dependencies:
