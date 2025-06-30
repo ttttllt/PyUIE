@@ -1,0 +1,73 @@
+model:
+  unet:
+    ~
+#  unet:
+#    "./module/unet.pth"
+
+torchvision_models_path: "./data/torchvision_models"
+
+dataset:
+  raw:
+    train: "./train/raw/"
+    val: "./val/raw/"
+  reference:
+    train: "./train/gt/"
+    val: "./val/gt/"
+    
+  split_seed: 42
+  split_ratio:
+    - 0.8
+    - 0.2
+    - 0.0
+  train:
+    crop_size: 384
+    batch_size: 16
+    shuffle: True
+    num_workers: 1
+  valid:
+    crop_size: 384
+    batch_size: 1
+    shuffle: True
+    num_workers: 1
+  test:
+    ~
+
+device:
+  "cuda"
+
+train:
+  max_epochs: 10000
+  lr: 1e-3
+  #  optimizer: "Adam"
+  step_lr:
+    T_max: 200
+    eta_min: 1e-4
+
+valid:
+  epoch_interval: 10
+
+test:
+  ~
+
+log:
+  iteration_interval: 10
+
+checkpoint:
+  dirname: "./checkpoint"
+  n_saved: 5
+  filename_prefix: "best"
+  score_name: "psnr"
+  require_empty: False
+  upload: True
+
+
+tb_logger:
+  log_dir: "./tb-logger"
+
+neptune_logger:
+  project: "123456"
+  api_token: "123456"
+  mode: "offline"
+#  mode: "async"
+  tags:
+    - "train"
