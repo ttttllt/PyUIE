@@ -18,7 +18,7 @@ To set up the environment and install the required packages, follow these steps:
 2. Install PyTorch (v.2.3) and other relevant dependencies:
    ```sh
    conda install pytorch==2.3.0 torchvision==0.17.0 pytorch-cuda=12.2 -c pytorch -c nvidia
-   pip install -r requirements.txt
+   pip install -r environment.txt
    ```
 
 
@@ -47,6 +47,6 @@ We provide the model training weights for two datasets，UIEB and LSUI, which ca
 
 1. Download and unzip the code.
 2. Place your testing images in the `input_dir` folder.
-3. Run `python outpicture.py --initmodel your_model_wright.pt -x input_dir -o output_dir `.
+3. Run `python test.py --initmodel your_model_wright.pt -x input_dir -o output_dir `.
 
 
